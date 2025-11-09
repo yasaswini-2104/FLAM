@@ -1,5 +1,8 @@
 // Connect to server
-const socket = io('http://localhost:3000'); // Corrected port to 3000
+const socket = io('http://localhost:3000'); // Corrected port to 
+
+
+
 
 // Initialize canvas
 let canvas = null;
