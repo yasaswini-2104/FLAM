@@ -36,6 +36,9 @@ You must have **Node.js** and **npm** installed.
 
 
 
+## DEPLOYED USING RENDER
+https://flam-5bve.onrender.com/
+
 ## 🖼️ Preview
 
 ![Collaborative Canvas Preview](preview.png)
