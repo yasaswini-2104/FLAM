@@ -251,7 +251,7 @@ class CollaborativeCanvas {
       
       this.frameCount = 0;
       this.lastFpsUpdate = now;
-    }, 3000);
+    }, 10000);
   }
 
   updateStats() {

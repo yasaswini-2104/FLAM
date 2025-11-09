@@ -1,5 +1,5 @@
 // Connect to server
-const socket = io('http://localhost:3000'); // Corrected port to 
+const socket = io('http://localhost:10000'); // Corrected port to 
 
 
 
@@ -101,7 +101,7 @@ function updateCursor(data) {
   cursorEl.timeout = setTimeout(() => {
     cursorEl.remove();
     cursors.delete(cursorId);
-  }, 3000);
+  }, 10000);
 }
 
 // UI Event Handlers
