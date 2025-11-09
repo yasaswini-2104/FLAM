@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborative Canvas Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div>
+        <h1>🎨 Collaborative Canvas Pro</h1>
+        <p>Real-time drawing with advanced features</p>
+      </div>
+      <div class="stats">
+        <div class="stat users">
+          <span>👥 Users:</span>
+          <span id="user-count">0</span>
+        </div>
+        <div class="stat">
+          <span>FPS:</span>
+          <span id="fps">60</span>
+        </div>
+        <div class="stat">
+          <span>Ops:</span>
+          <span id="ops">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <!-- Tools -->
+    <div class="tool-group">
+      <button class="tool-btn active" data-tool="brush" title="Brush (B)">
+        ✏️ Brush
+      </button>
+      <button class="tool-btn" data-tool="eraser" title="Eraser (E)">
+        🧹 Eraser
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Colors -->
+    <div class="tool-group">
+      <button class="color-btn" data-color="#000000" style="background: #000000"></button>
+      <button class="color-btn" data-color="#FF0000" style="background: #FF0000"></button>
+      <button class="color-btn" data-color="#00FF00" style="background: #00FF00"></button>
+      <button class="color-btn" data-color="#0000FF" style="background: #0000FF"></button>
+      <button class="color-btn" data-color="#FFFF00" style="background: #FFFF00"></button>
+      <button class="color-btn" data-color="#FF00FF" style="background: #FF00FF"></button>
+      <input type="color" id="color-picker" value="#000000" title="Custom Color">
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Size -->
+    <div class="tool-group">
+      <label>Size:</label>
+      <input type="range" id="line-width" min="1" max="50" value="3">
+      <span id="line-width-value">3</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Actions -->
+    <div class="tool-group">
+      <button id="undo-btn" class="action-btn" title="Undo (Ctrl+Z)">↶ Undo</button>
+      <button id="redo-btn" class="action-btn" title="Redo (Ctrl+Y)">↷ Redo</button>
+      <button id="clear-btn" class="action-btn danger" title="Clear Canvas">🗑️ Clear</button>
+      <button id="download-btn" class="action-btn" title="Download">💾 Save</button>
+    </div>
+  </div>
+
+  <!-- Canvas Container -->
+  <div class="canvas-container">
+    <canvas id="canvas"></canvas>
+    <div id="cursors-layer"></div>
+    <div id="connection-status" class="status-badge">🟢 Connected</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>Operations: <span id="operation-count">0</span></div>
+    <div>Tip: Use Ctrl+Z to undo | Press B for brush, E for eraser</div>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="canvas.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
